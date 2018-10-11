@@ -3,9 +3,9 @@
 import sys
 import os
 
-task_folder = os.path.join('task1')
+task_folder = os.path.join('task2')
 sys.path.append(task_folder)
-output_file = os.path.join(task_folder, 'outputs/local_output.txt')
+output_file = os.path.join(task_folder, 'outputs/local.out')
 
 data_folder = os.path.join('exc_data', 'small', 'gutenberg')
 input_files = [os.path.join(data_folder, '8830902613096153013.txt'),
