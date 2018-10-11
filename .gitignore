@@ -1,5 +1,6 @@
 /.idea/*
 /exc_data/*
+/data/*
 pipe.txt
 Qs.txt
 sorted_pipe.txt
