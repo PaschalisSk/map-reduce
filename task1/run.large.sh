@@ -11,7 +11,7 @@ OUTPUT_FILE=./outputs/task${TASK}.${DATASET}.${DATE}.out
 hdfs dfs -rm -r $OUTPUT_DIR
 hdfs dfs -rm -r /user/${USER}/assignment/task${TASK}
 
-time hadoop jar /opt/hadoop/hadoop-2.9.1/share/hadoop/tools/lib/hadoop-streaming-2.9.1.jar \
+(time hadoop jar /opt/hadoop/hadoop-2.9.1/share/hadoop/tools/lib/hadoop-streaming-2.9.1.jar \
   -D mapred.reduce.tasks=1 \
   -D mapreduce.job.name=${USER}_task${TASK}_${DATASET} \
   -input /data/${DATASET}/gutenberg \
@@ -19,7 +19,8 @@ time hadoop jar /opt/hadoop/hadoop-2.9.1/share/hadoop/tools/lib/hadoop-streaming
   -mapper mapper.py \
   -reducer reducer.py \
   -file mapper.py \
-  -file reducer.py |& tee ./outputs/task${TASK}.${DATASET}.${DATE}.log
+  -file reducer.py | tee ./outputs/task${TASK}.${DATASET}.${DATE}.log) \
+  | tee -a ./outputs/task${TASK}.${DATASET}.${DATE}.log
 
 hdfs dfs -cp ${OUTPUT_DIR} /user/${USER}/assignment/task${TASK}
 hdfs dfs -cat ${OUTPUT_DIR}/part-* | head -n 20 > $OUTPUT_FILE
