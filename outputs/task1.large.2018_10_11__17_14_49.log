@@ -1,4 +1,0 @@
-2018-10-11 17:14:54,633 WARN  [main] streaming.StreamJob (StreamJob.java:parseArgv(291)) - -file option is deprecated, please use generic option -files instead.
-File: /afs/inf.ed.ac.uk/user/s18/s1837504/exc/mapper.py does not exist, or is not readable.
-Try -help for more information
-Streaming Command Failed!
