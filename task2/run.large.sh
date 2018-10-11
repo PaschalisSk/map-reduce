@@ -22,6 +22,10 @@ hdfs dfs -rm -r /user/${USER}/assignment/task${TASK}
   -file combiner.py \
   -file reducer.py) 2>&1 | tee ./outputs/task${TASK}.${DATASET}.${DATE}.log
 
+# Copy output to the folder designated by the assignment document
 hdfs dfs -cp ${OUTPUT_DIR} /user/${USER}/assignment/task${TASK}
+# Copy first 20 lines from the output as designated by the assignment document
 hdfs dfs -cat ${OUTPUT_DIR}/part-* | head -n 20 > $OUTPUT_FILE
+# Copy the actual output to local
+hdfs dfs -copyToLocal ${OUTPUT_DIR}/* ./outputs/
 cat $OUTPUT_FILE
