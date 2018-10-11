@@ -6,6 +6,7 @@ OUTPUT_FILE=./outputs/task${TASK}.${DATASET}.`date '+%Y_%m_%d__%H_%M_%S'`.out
 
 # Hadoop won't start if the output directory already exists
 hdfs dfs -rm -r $OUTPUT_DIR
+hdfs dfs -rm -r /user/${USER}/assignment/task${TASK}
 
 time hadoop jar /opt/hadoop/hadoop-2.9.1/share/hadoop/tools/lib/hadoop-streaming-2.9.1.jar \
   -D mapred.reduce.tasks=1 \
