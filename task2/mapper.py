@@ -6,7 +6,7 @@ from collections import defaultdict
 # Dict to store lines and words count.
 # We have to bound its size
 
-bigram_dict = defaultdict(int)
+bigram_dict = defaultdict(list)
 MAX_SIZE = 100
 
 

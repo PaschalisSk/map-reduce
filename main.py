@@ -3,7 +3,7 @@
 import sys
 import os
 
-task_folder = os.path.join('task2')
+task_folder = os.path.join('task1')
 sys.path.append(task_folder)
 output_file = os.path.join(task_folder, 'outputs/local.out')
 

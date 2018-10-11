@@ -3,11 +3,7 @@
 import sys
 from collections import defaultdict
 
-# We are forced to have one reducer(-D mapred.reduce.tasks=1 )
-# since the output format specified is numwords:int numlines:int.
-# We could have two reducers who produced lines numlines:int and
-# words numwords:int. However, extra lines in run.sh would be required in order
-# to produce the required output.
+
 prev_key = None
 
 # Dict to store lines and words count.
@@ -27,6 +23,8 @@ for line in sys.stdin:  # For every line in the input from stdin
         reducer_dict[key] = value
         prev_key = key
 
-# Print the results, check if reducer got any input
-if prev_key is not None:
-    print("{0}\t{1}".format(reducer_dict["words"], reducer_dict["lines"]))
+# Print the results
+# if statement is required in case we didn't
+# get any input (i.e. reducer_dict is empty)
+if 'words' in reducer_dict and 'lines' in reducer_dict:
+    print("{0}\t{1}".format(reducer_dict['words'], reducer_dict['lines']))
