@@ -12,7 +12,6 @@ hdfs dfs -rm -r $OUTPUT_DIR
 hdfs dfs -rm -r /user/${USER}/assignment/task${TASK}
 
 (time hadoop jar /opt/hadoop/hadoop-2.9.1/share/hadoop/tools/lib/hadoop-streaming-2.9.1.jar \
-  -D mapred.reduce.tasks=1 \
   -D mapreduce.job.name=${USER}_task${TASK}_${DATASET} \
   -input /data/${DATASET}/gutenberg \
   -output $OUTPUT_DIR \
