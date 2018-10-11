@@ -16,8 +16,10 @@ hdfs dfs -rm -r $OUTPUT_DIR
   -input /data/${DATASET}/gutenberg \
   -output $OUTPUT_DIR \
   -mapper mapper.py \
+  -mapper combiner.py \
   -reducer reducer.py \
   -file mapper.py \
+  -file combiner.py \
   -file reducer.py) 2>&1 | tee ./outputs/task${TASK}.${DATASET}.${DATE}.log
 
 hdfs dfs -cat ${OUTPUT_DIR}/part-* | head -n 20 > $OUTPUT_FILE

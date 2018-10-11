@@ -5,7 +5,7 @@ import sys
 prev_bigram = None
 value_total = 0
 
-for line in sys.stdin:  # For ever line in the input from stdin
+for line in sys.stdin:  # For every line in the input from stdin
     line = line.strip()  # Remove trailing characters
     bigram, value = line.split("\t", 1)
     value = int(value)

@@ -6,7 +6,7 @@ from collections import defaultdict
 # Dict to store lines and words count.
 # We have to bound its size
 
-bigram_dict = defaultdict(list)
+bigram_dict = defaultdict(int)
 MAX_SIZE = 100
 
 
@@ -30,6 +30,6 @@ for line in sys.stdin:
 
             bigram_dict.clear()
 
-# Emit remaining key-value
+# Emit remaining keys-values
 for key, value in bigram_dict.items():
     print(key + "\t" + str(value))
