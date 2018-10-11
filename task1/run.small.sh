@@ -20,5 +20,10 @@ hdfs dfs -rm -r $OUTPUT_DIR
   -file mapper.py \
   -file reducer.py) 2>&1 | tee ./outputs/task${TASK}.${DATASET}.${DATE}.log
 
+# Copy first 20 lines from the output as designated by the assignment document
 hdfs dfs -cat ${OUTPUT_DIR}/part-* | head -n 20 > $OUTPUT_FILE
+# Copy the actual output to local
+hdfs dfs -copyToLocal ${OUTPUT_DIR}/* ./outputs/
+# Rename all outputs for current run
+for i in part-*; do mv "$i" "task${TASK}.${DATASET}.${DATE}${i%.*}"; done
 cat $OUTPUT_FILE
