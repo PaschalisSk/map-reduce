@@ -1,6 +1,7 @@
 /.idea/*
 /exc_data/*
 /data/*
+*.pyc
 pipe.txt
 Qs.txt
 sorted_pipe.txt
