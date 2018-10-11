@@ -20,7 +20,7 @@ hdfs dfs -rm -r /user/${USER}/assignment/task${TASK}
   -reducer reducer.py \
   -file mapper.py \
   -file reducer.py | tee ./outputs/task${TASK}.${DATASET}.${DATE}.log) \
-  | tee -a ./outputs/task${TASK}.${DATASET}.${DATE}.log
+  2>&1 | tee -a ./outputs/task.log
 
 hdfs dfs -cp ${OUTPUT_DIR} /user/${USER}/assignment/task${TASK}
 hdfs dfs -cat ${OUTPUT_DIR}/part-* | head -n 20 > $OUTPUT_FILE
