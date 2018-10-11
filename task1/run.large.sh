@@ -2,7 +2,10 @@
 TASK=1
 DATASET=large
 OUTPUT_DIR=/user/${USER}/output/task${TASK}/${DATASET}
-OUTPUT_FILE=./outputs/task${TASK}.${DATASET}.`date '+%Y_%m_%d__%H_%M_%S'`.out
+DATE=`date '+%Y_%m_%d__%H_%M_%S'`
+
+mkdir outputs
+OUTPUT_FILE=./outputs/task${TASK}.${DATASET}.${DATE}.out
 
 # Hadoop won't start if the output directory already exists
 hdfs dfs -rm -r $OUTPUT_DIR
@@ -16,8 +19,8 @@ time hadoop jar /opt/hadoop/hadoop-2.9.1/share/hadoop/tools/lib/hadoop-streaming
   -mapper mapper.py \
   -reducer reducer.py \
   -file mapper.py \
-  -file reducer.py | tee ./outputs/task${TASK}.${DATASET}.`date '+%Y_%m_%d__%H_%M_%S'`.log
+  -file reducer.py |& tee ./outputs/task${TASK}.${DATASET}.${DATE}.log
 
-hdfs dfs -cp ${OUTPUT_DIR}/part-* /user/${USER}/assignment/task${TASK}
+hdfs dfs -cp ${OUTPUT_DIR} /user/${USER}/assignment/task${TASK}
 hdfs dfs -cat ${OUTPUT_DIR}/part-* | head -n 20 > $OUTPUT_FILE
 cat $OUTPUT_FILE
