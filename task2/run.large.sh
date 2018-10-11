@@ -29,5 +29,8 @@ hdfs dfs -cat ${OUTPUT_DIR}/part-* | head -n 20 > $OUTPUT_FILE
 # Copy the actual output to local
 hdfs dfs -copyToLocal ${OUTPUT_DIR}/* ./outputs/
 # Rename all outputs for current run
+# Too tired to find a solution without the cd hack
+cd outputs
 for i in part-*; do mv "$i" "task${TASK}.${DATASET}.${DATE}${i%.*}"; done
+cd ..
 cat $OUTPUT_FILE
