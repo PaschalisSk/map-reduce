@@ -18,6 +18,9 @@ for line in sys.stdin:
 # It's going to be a long string with all the genres but
 # for our problem an upper bound of 100 genres, each 10 characters long,
 # is logical. Hence, we don't have to flush incomplete results.
+# Thankfully we are handling movie genres and not music so we are
+# avoiding stuff like every possible combination of post, nu, alternative,
+# experimental, progressive, experimental metal :)
 print('genres' + '\t' + ','.join(genres))
 
 # As was the case in task3, there is no significant gain of adding
