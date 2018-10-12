@@ -4,7 +4,7 @@ import sys
 import os
 
 COMBINER = False
-task_folder = os.path.join('task4')
+task_folder = os.path.join('task5')
 sys.path.append(task_folder)
 if not os.path.exists(os.path.join(task_folder, 'outputs')):
     os.makedirs(os.path.join(task_folder, 'outputs'))

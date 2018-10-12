@@ -2,7 +2,7 @@
 # reducer.py
 import sys
 
-# Set which holds all the sets
+# Set which holds all the genres
 # Again, given our problem, we won't have memory problems, so we are not
 # flushing.
 genres = set()
