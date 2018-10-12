@@ -10,3 +10,7 @@ for line in sys.stdin:
         actors += 1
 
 print('actors' + "\t" + str(actors))
+
+# The gains of a normal combiner in this task would be minimal
+# From the log we can see that there are 4 map output records so
+# best case scenario is to combine 4 key-value pairs in 1.
