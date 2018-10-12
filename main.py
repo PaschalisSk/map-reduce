@@ -3,8 +3,8 @@
 import sys
 import os
 
-COMBINER = True
-task_folder = os.path.join('task2')
+COMBINER = False
+task_folder = os.path.join('task3')
 sys.path.append(task_folder)
 if not os.path.exists(os.path.join(task_folder, 'outputs')):
     os.makedirs(os.path.join(task_folder, 'outputs'))
@@ -13,10 +13,8 @@ if COMBINER:
 else:
     output_file = os.path.join(task_folder, 'outputs/local.out')
 
-data_folder = os.path.join('exc_data', 'small', 'gutenberg')
-input_files = [os.path.join(data_folder, '8830902613096153013.txt'),
-               os.path.join(data_folder, '8849603765382661967.txt'),
-               os.path.join(data_folder, '8920594670119951108.txt')]
+data_folder = os.path.join('exc_data', 'small', 'imdb')
+input_files = [os.path.join(data_folder, 'name.basics.tsv')]
 
 #Empty pipe
 open('pipe.txt', 'w').close()
