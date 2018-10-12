@@ -4,21 +4,21 @@ import sys
 
 # Variables to hold totals
 total_titles = 0
-total_votes = 0
+total_writers = 0
 # I think it's safe to assume that the memory footprint of those two numbers
 # won't surpass the available RAM(practically).
 # Therefore there is no need to flush.
-# In the log I found: Map output materialized bytes = 80
-# So we are way more than fine.
 
 for line in sys.stdin:
-    # Extract the total votes
-    votes = line.strip().split('\t', 2)[2]
-    # Check to see if the number is given. Just to be safe
-    if votes != '\N':
+    # Extract the writers
+    writers = line.strip().split('\t', 2)[2]
+    # Check to see if we have at least 1 writer
+    if writers != '\N':
+        # Get the # of writers
+        writers = len(writers.split(','))
         total_titles += 1
-        total_votes += int(votes)
+        total_writers += writers
 
 print('titles\t' + str(total_titles))
-print('votes\t' + str(total_votes))
+print('writers\t' + str(total_writers))
 # Again, each mapper outputs 2 key-value pairs. A reducer wouldn't do much.
