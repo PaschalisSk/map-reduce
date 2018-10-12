@@ -1,8 +1,6 @@
 #!/usr/bin/python2.7
 # mapper.py
 import sys
-from collections import defaultdict
-
 
 actors = 0
 
