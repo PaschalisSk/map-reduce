@@ -7,7 +7,7 @@ year = None
 rating = None
 
 for line in sys.stdin:  # For every line in the input from stdin
-    title_id, value = line.split('\t', 1)
+    title_id, value = line.strip().split('\t', 1)
     print(title_id + '\t' + value)
     # line = line.strip()  # Remove trailing characters
     # title_id, value = line.split('\t', 1)
