@@ -1,0 +1,134 @@
+2018-10-13 06:33:19,119 WARN  [main] streaming.StreamJob (StreamJob.java:parseArgv(291)) - -file option is deprecated, please use generic option -files instead.
+packageJobJar: [mapper2.py, reducer2.py, /tmp/hadoop-unjar9034075177492190047/] [] /tmp/streamjob1425603343552844404.jar tmpDir=null
+2018-10-13 06:33:20,034 INFO  [main] client.RMProxy (RMProxy.java:newProxyInstance(133)) - Connecting to ResourceManager at scutter02.inf.ed.ac.uk/192.168.16.102:8032
+2018-10-13 06:33:20,248 INFO  [main] client.RMProxy (RMProxy.java:newProxyInstance(133)) - Connecting to ResourceManager at scutter02.inf.ed.ac.uk/192.168.16.102:8032
+2018-10-13 06:33:20,495 INFO  [main] hdfs.DFSClient (DFSClient.java:getDelegationToken(689)) - Created HDFS_DELEGATION_TOKEN token 6168 for s1837504 on 192.168.16.101:8020
+2018-10-13 06:33:20,534 INFO  [main] security.TokenCache (TokenCache.java:obtainTokensForNamenodesInternal(143)) - Got dt for hdfs://scutter01.inf.ed.ac.uk:8020; Kind: HDFS_DELEGATION_TOKEN, Service: 192.168.16.101:8020, Ident: (HDFS_DELEGATION_TOKEN token 6168 for s1837504)
+2018-10-13 06:33:20,913 INFO  [main] mapred.FileInputFormat (FileInputFormat.java:listStatus(256)) - Total input files to process : 2
+2018-10-13 06:33:21,190 INFO  [main] mapreduce.JobSubmitter (JobSubmitter.java:submitJobInternal(204)) - number of splits:2
+2018-10-13 06:33:21,309 INFO  [main] Configuration.deprecation (Configuration.java:logDeprecation(1297)) - yarn.resourcemanager.system-metrics-publisher.enabled is deprecated. Instead, use yarn.system-metrics-publisher.enabled
+2018-10-13 06:33:21,396 INFO  [main] mapreduce.JobSubmitter (JobSubmitter.java:printTokens(300)) - Submitting tokens for job: job_1537968858837_5723
+2018-10-13 06:33:21,396 INFO  [main] mapreduce.JobSubmitter (JobSubmitter.java:printTokens(302)) - Kind: HDFS_DELEGATION_TOKEN, Service: 192.168.16.101:8020, Ident: (HDFS_DELEGATION_TOKEN token 6168 for s1837504)
+2018-10-13 06:33:21,785 INFO  [main] impl.YarnClientImpl (YarnClientImpl.java:submitApplication(290)) - Submitted application application_1537968858837_5723
+2018-10-13 06:33:21,842 INFO  [main] mapreduce.Job (Job.java:submit(1574)) - The url to track the job: http://scutter02.inf.ed.ac.uk:8088/proxy/application_1537968858837_5723/
+2018-10-13 06:33:21,844 INFO  [main] mapreduce.Job (Job.java:monitorAndPrintJob(1619)) - Running job: job_1537968858837_5723
+2018-10-13 06:33:28,977 INFO  [main] mapreduce.Job (Job.java:monitorAndPrintJob(1640)) - Job job_1537968858837_5723 running in uber mode : false
+2018-10-13 06:33:28,978 INFO  [main] mapreduce.Job (Job.java:monitorAndPrintJob(1647)) -  map 0% reduce 0%
+2018-10-13 06:33:35,060 INFO  [main] mapreduce.Job (Job.java:printTaskEvents(1686)) - Task Id : attempt_1537968858837_5723_m_000000_0, Status : FAILED
+Error: java.lang.RuntimeException: PipeMapRed.waitOutputThreads(): subprocess failed with code 1
+	at org.apache.hadoop.streaming.PipeMapRed.waitOutputThreads(PipeMapRed.java:325)
+	at org.apache.hadoop.streaming.PipeMapRed.mapRedFinished(PipeMapRed.java:538)
+	at org.apache.hadoop.streaming.PipeMapper.close(PipeMapper.java:130)
+	at org.apache.hadoop.mapred.MapRunner.run(MapRunner.java:61)
+	at org.apache.hadoop.streaming.PipeMapRunner.run(PipeMapRunner.java:34)
+	at org.apache.hadoop.mapred.MapTask.runOldMapper(MapTask.java:459)
+	at org.apache.hadoop.mapred.MapTask.run(MapTask.java:343)
+	at org.apache.hadoop.mapred.YarnChild$2.run(YarnChild.java:177)
+	at java.security.AccessController.doPrivileged(Native Method)
+	at javax.security.auth.Subject.doAs(Subject.java:422)
+	at org.apache.hadoop.security.UserGroupInformation.doAs(UserGroupInformation.java:1889)
+	at org.apache.hadoop.mapred.YarnChild.main(YarnChild.java:171)
+
+2018-10-13 06:33:35,085 INFO  [main] mapreduce.Job (Job.java:printTaskEvents(1686)) - Task Id : attempt_1537968858837_5723_m_000001_0, Status : FAILED
+Error: java.lang.RuntimeException: PipeMapRed.waitOutputThreads(): subprocess failed with code 1
+	at org.apache.hadoop.streaming.PipeMapRed.waitOutputThreads(PipeMapRed.java:325)
+	at org.apache.hadoop.streaming.PipeMapRed.mapRedFinished(PipeMapRed.java:538)
+	at org.apache.hadoop.streaming.PipeMapper.close(PipeMapper.java:130)
+	at org.apache.hadoop.mapred.MapRunner.run(MapRunner.java:61)
+	at org.apache.hadoop.streaming.PipeMapRunner.run(PipeMapRunner.java:34)
+	at org.apache.hadoop.mapred.MapTask.runOldMapper(MapTask.java:459)
+	at org.apache.hadoop.mapred.MapTask.run(MapTask.java:343)
+	at org.apache.hadoop.mapred.YarnChild$2.run(YarnChild.java:177)
+	at java.security.AccessController.doPrivileged(Native Method)
+	at javax.security.auth.Subject.doAs(Subject.java:422)
+	at org.apache.hadoop.security.UserGroupInformation.doAs(UserGroupInformation.java:1889)
+	at org.apache.hadoop.mapred.YarnChild.main(YarnChild.java:171)
+
+2018-10-13 06:33:38,104 INFO  [main] mapreduce.Job (Job.java:printTaskEvents(1686)) - Task Id : attempt_1537968858837_5723_m_000001_1, Status : FAILED
+Error: java.lang.RuntimeException: PipeMapRed.waitOutputThreads(): subprocess failed with code 1
+	at org.apache.hadoop.streaming.PipeMapRed.waitOutputThreads(PipeMapRed.java:325)
+	at org.apache.hadoop.streaming.PipeMapRed.mapRedFinished(PipeMapRed.java:538)
+	at org.apache.hadoop.streaming.PipeMapper.close(PipeMapper.java:130)
+	at org.apache.hadoop.mapred.MapRunner.run(MapRunner.java:61)
+	at org.apache.hadoop.streaming.PipeMapRunner.run(PipeMapRunner.java:34)
+	at org.apache.hadoop.mapred.MapTask.runOldMapper(MapTask.java:459)
+	at org.apache.hadoop.mapred.MapTask.run(MapTask.java:343)
+	at org.apache.hadoop.mapred.YarnChild$2.run(YarnChild.java:177)
+	at java.security.AccessController.doPrivileged(Native Method)
+	at javax.security.auth.Subject.doAs(Subject.java:422)
+	at org.apache.hadoop.security.UserGroupInformation.doAs(UserGroupInformation.java:1889)
+	at org.apache.hadoop.mapred.YarnChild.main(YarnChild.java:171)
+
+2018-10-13 06:33:40,118 INFO  [main] mapreduce.Job (Job.java:printTaskEvents(1686)) - Task Id : attempt_1537968858837_5723_m_000000_1, Status : FAILED
+Error: java.lang.RuntimeException: PipeMapRed.waitOutputThreads(): subprocess failed with code 1
+	at org.apache.hadoop.streaming.PipeMapRed.waitOutputThreads(PipeMapRed.java:325)
+	at org.apache.hadoop.streaming.PipeMapRed.mapRedFinished(PipeMapRed.java:538)
+	at org.apache.hadoop.streaming.PipeMapper.close(PipeMapper.java:130)
+	at org.apache.hadoop.mapred.MapRunner.run(MapRunner.java:61)
+	at org.apache.hadoop.streaming.PipeMapRunner.run(PipeMapRunner.java:34)
+	at org.apache.hadoop.mapred.MapTask.runOldMapper(MapTask.java:459)
+	at org.apache.hadoop.mapred.MapTask.run(MapTask.java:343)
+	at org.apache.hadoop.mapred.YarnChild$2.run(YarnChild.java:177)
+	at java.security.AccessController.doPrivileged(Native Method)
+	at javax.security.auth.Subject.doAs(Subject.java:422)
+	at org.apache.hadoop.security.UserGroupInformation.doAs(UserGroupInformation.java:1889)
+	at org.apache.hadoop.mapred.YarnChild.main(YarnChild.java:171)
+
+2018-10-13 06:33:42,131 INFO  [main] mapreduce.Job (Job.java:printTaskEvents(1686)) - Task Id : attempt_1537968858837_5723_m_000001_2, Status : FAILED
+Error: java.lang.RuntimeException: PipeMapRed.waitOutputThreads(): subprocess failed with code 1
+	at org.apache.hadoop.streaming.PipeMapRed.waitOutputThreads(PipeMapRed.java:325)
+	at org.apache.hadoop.streaming.PipeMapRed.mapRedFinished(PipeMapRed.java:538)
+	at org.apache.hadoop.streaming.PipeMapper.close(PipeMapper.java:130)
+	at org.apache.hadoop.mapred.MapRunner.run(MapRunner.java:61)
+	at org.apache.hadoop.streaming.PipeMapRunner.run(PipeMapRunner.java:34)
+	at org.apache.hadoop.mapred.MapTask.runOldMapper(MapTask.java:459)
+	at org.apache.hadoop.mapred.MapTask.run(MapTask.java:343)
+	at org.apache.hadoop.mapred.YarnChild$2.run(YarnChild.java:177)
+	at java.security.AccessController.doPrivileged(Native Method)
+	at javax.security.auth.Subject.doAs(Subject.java:422)
+	at org.apache.hadoop.security.UserGroupInformation.doAs(UserGroupInformation.java:1889)
+	at org.apache.hadoop.mapred.YarnChild.main(YarnChild.java:171)
+
+2018-10-13 06:33:44,145 INFO  [main] mapreduce.Job (Job.java:printTaskEvents(1686)) - Task Id : attempt_1537968858837_5723_m_000000_2, Status : FAILED
+Error: java.lang.RuntimeException: PipeMapRed.waitOutputThreads(): subprocess failed with code 1
+	at org.apache.hadoop.streaming.PipeMapRed.waitOutputThreads(PipeMapRed.java:325)
+	at org.apache.hadoop.streaming.PipeMapRed.mapRedFinished(PipeMapRed.java:538)
+	at org.apache.hadoop.streaming.PipeMapper.close(PipeMapper.java:130)
+	at org.apache.hadoop.mapred.MapRunner.run(MapRunner.java:61)
+	at org.apache.hadoop.streaming.PipeMapRunner.run(PipeMapRunner.java:34)
+	at org.apache.hadoop.mapred.MapTask.runOldMapper(MapTask.java:459)
+	at org.apache.hadoop.mapred.MapTask.run(MapTask.java:343)
+	at org.apache.hadoop.mapred.YarnChild$2.run(YarnChild.java:177)
+	at java.security.AccessController.doPrivileged(Native Method)
+	at javax.security.auth.Subject.doAs(Subject.java:422)
+	at org.apache.hadoop.security.UserGroupInformation.doAs(UserGroupInformation.java:1889)
+	at org.apache.hadoop.mapred.YarnChild.main(YarnChild.java:171)
+
+2018-10-13 06:33:50,176 INFO  [main] mapreduce.Job (Job.java:monitorAndPrintJob(1647)) -  map 100% reduce 100%
+2018-10-13 06:33:50,184 INFO  [main] mapreduce.Job (Job.java:monitorAndPrintJob(1660)) - Job job_1537968858837_5723 failed with state FAILED due to: Task failed task_1537968858837_5723_m_000000
+Job failed as tasks failed. failedMaps:1 failedReduces:0
+
+2018-10-13 06:33:50,303 INFO  [main] mapreduce.Job (Job.java:monitorAndPrintJob(1665)) - Counters: 15
+	Job Counters 
+		Failed map tasks=7
+		Killed map tasks=1
+		Killed reduce tasks=2
+		Launched map tasks=8
+		Other local map tasks=6
+		Data-local map tasks=1
+		Rack-local map tasks=1
+		Total time spent by all maps in occupied slots (ms)=55096
+		Total time spent by all reduces in occupied slots (ms)=0
+		Total time spent by all map tasks (ms)=27548
+		Total vcore-milliseconds taken by all map tasks=27548
+		Total megabyte-milliseconds taken by all map tasks=112836608
+	Map-Reduce Framework
+		CPU time spent (ms)=0
+		Physical memory (bytes) snapshot=0
+		Virtual memory (bytes) snapshot=0
+2018-10-13 06:33:50,303 ERROR [main] streaming.StreamJob (StreamJob.java:submitAndMonitorJob(1022)) - Job not successful!
+Streaming Command Failed!
+
+real	0m32.093s
+user	0m9.295s
+sys	0m0.672s
