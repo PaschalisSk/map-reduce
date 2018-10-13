@@ -13,8 +13,8 @@ OUTPUT_FILE_JOB_1=./outputs/job1/task${TASK}.${DATASET}.${DATE}.out
 OUTPUT_FILE_JOB_2=./outputs/job2/task${TASK}.${DATASET}.${DATE}.out
 
 # Hadoop won't start if the output directories already exists
-hdfs dfs -rm -r OUTPUT_DIR_JOB_1
-hdfs dfs -rm -r OUTPUT_DIR_JOB_2
+hdfs dfs -rm -r $OUTPUT_DIR_JOB_1
+hdfs dfs -rm -r $OUTPUT_DIR_JOB_2
 
 (time hadoop jar /opt/hadoop/hadoop-2.9.1/share/hadoop/tools/lib/hadoop-streaming-2.9.1.jar \
   -D mapreduce.job.name=${USER}_task${TASK}_${DATASET}_job1 \
@@ -38,8 +38,8 @@ hdfs dfs -rm -r OUTPUT_DIR_JOB_2
 
 
 # Copy first 20 lines from the output as designated by the assignment document
-hdfs dfs -cat ${OUTPUT_DIR_JOB_1}/part-* | head -n 20 > OUTPUT_FILE_JOB_1
-hdfs dfs -cat ${OUTPUT_DIR_JOB_2}/part-* | head -n 20 > OUTPUT_FILE_JOB_2
+hdfs dfs -cat ${OUTPUT_DIR_JOB_1}/part-* | head -n 20 > $OUTPUT_FILE_JOB_1
+hdfs dfs -cat ${OUTPUT_DIR_JOB_2}/part-* | head -n 20 > $OUTPUT_FILE_JOB_2
 # Copy the actual output to local
 hdfs dfs -copyToLocal ${OUTPUT_DIR_JOB_1}/* ./outputs/job1
 hdfs dfs -copyToLocal ${OUTPUT_DIR_JOB_2}/* ./outputs/job2
