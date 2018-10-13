@@ -14,10 +14,9 @@ total_votes = 0
 for line in sys.stdin:
     # Extract the total votes
     votes = line.strip().split('\t', 2)[2]
-    # Check to see if the number is given. Just to be safe
-    if votes != '\N':
-        total_titles += 1
-        total_votes += int(votes)
+    # numvotes is not optional so no need to check for \N
+    total_titles += 1
+    total_votes += int(votes)
 
 print('titles\t' + str(total_titles))
 print('votes\t' + str(total_votes))

@@ -4,7 +4,7 @@ import sys
 import os
 
 COMBINER = False
-task_folder = os.path.join('task7')
+task_folder = os.path.join('task8')
 sys.path.append(task_folder)
 if not os.path.exists(os.path.join(task_folder, 'outputs')):
     os.makedirs(os.path.join(task_folder, 'outputs'))
@@ -14,7 +14,8 @@ else:
     output_file = os.path.join(task_folder, 'outputs/local.out')
 
 data_folder = os.path.join('exc_data', 'small', 'imdb')
-input_files = [os.path.join(data_folder, 'title.crew.tsv')]
+input_files = [os.path.join(data_folder, 'title.basics.tsv'),
+               os.path.join(data_folder, 'title.ratings.tsv')]
 
 #Empty pipe
 open('pipe.txt', 'w').close()

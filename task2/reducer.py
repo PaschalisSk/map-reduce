@@ -25,5 +25,8 @@ for line in sys.stdin:  # For every line in the input from stdin
         prev_bigram = bigram
 
 # Don't forget the last key/value pair
+# I have 'prev_bigram is not None' instead of 'prev_word == word' which
+# was in lab 2. This is because maybe the reducer doesn't get any input
+# and word is not initialised. The final result is the same
 if prev_bigram is not None and value_total > 5:
     print("{0} {1}\t".format(prev_bigram, value_total))
