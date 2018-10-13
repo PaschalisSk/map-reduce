@@ -18,7 +18,6 @@ hdfs dfs -rm -r $OUTPUT_DIR_JOB_2
 
 (time hadoop jar /opt/hadoop/hadoop-2.9.1/share/hadoop/tools/lib/hadoop-streaming-2.9.1.jar \
   -D mapreduce.job.name=${USER}_task${TASK}_${DATASET}_job1 \
-  -D num.key.fields.for.partition=2 \
   -input /data/${DATASET}/imdb/title.basics.tsv \
   -input /data/${DATASET}/imdb/title.ratings.tsv \
   -output $OUTPUT_DIR_JOB_1 \
