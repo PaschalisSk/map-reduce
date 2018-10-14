@@ -22,7 +22,7 @@ for line in sys.stdin:  # For every line in the input from stdin
         print(year + '\t' + rating)
     else:
         # If the first line of the new title_id is the year we are saving the
-        # year+resetting rating to None and vice versa
+        # year and resetting rating to None and vice versa
         if value.split('\t')[0] != 'y':
             year = value.split('\t')[0]
             rating = None

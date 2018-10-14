@@ -12,7 +12,7 @@ for line in sys.stdin:
             # If year is between our range
             if 1900 <= int(parts[5]) <= 1999:
                 title_id = parts[0]
-                # We care about decades, so let's floor
+                # We care about decades, so we may as well floor
                 # the year down to the decade
                 year = int(parts[5])
                 year = int(math.floor(year / 10.0) * 10)
