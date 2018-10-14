@@ -22,3 +22,8 @@ for line in sys.stdin:  # For every line in the input from stdin
 # Emit key-value pairs and use '\t' as the delimiter
 for key, value in mapper_dict.items():
     print(key + "\t" + str(value))
+
+# Again, a normal combiner in this task would only combine outputs
+# from different mappers in one machine and since each mapper
+# produces a small amount ( <=28 as we saw in task4) of key-value pairs
+# it wouldn't add much.
