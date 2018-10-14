@@ -16,7 +16,7 @@ hdfs dfs -rm -r /user/${USER}/assignment/task${TASK}
   -input /data/${DATASET}/gutenberg \
   -output $OUTPUT_DIR \
   -mapper mapper.py \
-  -mapper combiner.py \
+  -combiner combiner.py \
   -reducer reducer.py \
   -file mapper.py \
   -file combiner.py \

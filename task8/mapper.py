@@ -3,6 +3,13 @@
 import math
 import sys
 
+# If the mapper reads from title.basics.tsv it will produce pairs of the form
+# title_id    decade    'r'
+# If the mapper reads from title.ratings.tsv it will produce pairs of the form
+# title_id    'y'    decade
+# The reducer will read pairs with the same key(title_id) and create pairs
+# decade     rating
+# That way the job2 will be able to find the average for each decade
 for line in sys.stdin:
     parts = line.strip().split('\t')
 
