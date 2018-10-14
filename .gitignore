@@ -2,6 +2,7 @@
 /exc_data/*
 /data/*
 *.pyc
+main*.py
 pipe.txt
 Qs.txt
 sorted_pipe.txt
