@@ -5,7 +5,7 @@ import sys
 prev_title_id = None
 
 for line in sys.stdin:  # For every line in the input from stdin
-    title_id, value = line.strip().split('\t', 1)
+    #title_id, value = line.strip().split('\t', 1)
     print(line.strip())
     # # We are reading lines ordered by title_id
     # if prev_title_id == title_id:

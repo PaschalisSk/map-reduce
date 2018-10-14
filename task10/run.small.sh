@@ -22,7 +22,8 @@ hdfs dfs -rm -r $OUTPUT_DIR
   -reducer reducer.py \
   -file mapper.py \
   -file combiner.py \
-  -file reducer.py) 2>&1 | tee ./outputs/task${TASK}.${DATASET}.${DATE}.log
+  -file reducer.py\
+  -partitioner org.apache.hadoop.mapred.lib.KeyFieldBasedPartitioner) 2>&1 | tee ./outputs/task${TASK}.${DATASET}.${DATE}.log
 
 # Copy first 20 lines from the output as designated by the assignment document
 hdfs dfs -cat ${OUTPUT_DIR}/part-* | head -n 20 > $OUTPUT_FILE
