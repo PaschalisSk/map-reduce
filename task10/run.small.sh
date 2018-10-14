@@ -18,10 +18,8 @@ hdfs dfs -rm -r $OUTPUT_DIR
   -input /data/${DATASET}/imdb/title.basics.tsv \
   -output $OUTPUT_DIR \
   -mapper mapper.py \
-  -combiner combiner.py \
   -reducer reducer.py \
   -file mapper.py \
-  -file combiner.py \
   -file reducer.py\
   -partitioner org.apache.hadoop.mapred.lib.KeyFieldBasedPartitioner) 2>&1 | tee ./outputs/task${TASK}.${DATASET}.${DATE}.log
 
