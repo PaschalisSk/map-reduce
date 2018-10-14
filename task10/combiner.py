@@ -11,19 +11,20 @@ for line in sys.stdin:  # For every line in the input from stdin
     title_id, crew = line.split("\t", 1)
 
     if prev_title_id == title_id:
-        all_crew += crew + ','
         # If we have exceeded our max string size print
         if len(all_crew) > MAX_SIZE:
-            print(prev_title_id + "\t" + all_crew[:-1])
-            all_crew = ''
+            print(prev_title_id + "\t" + all_crew)
+            all_crew = crew
+        else:
+            all_crew += ',' + crew
     else:
         # Write result to stdout
         if prev_title_id is not None:
-            print(prev_title_id + "\t" + all_crew[:-1])
+            print(prev_title_id + "\t" + all_crew)
 
         all_crew = crew
         prev_title_id = title_id
 
 # Don't forget the last key/value pair
 if prev_title_id is not None:
-    print(prev_title_id + "\t" + all_crew[:-1])
+    print(prev_title_id + "\t" + all_crew)
