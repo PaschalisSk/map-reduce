@@ -13,13 +13,15 @@ hdfs dfs -rm -r /user/${USER}/assignment/task${TASK}
 
 (time hadoop jar /opt/hadoop/hadoop-2.9.1/share/hadoop/tools/lib/hadoop-streaming-2.9.1.jar \
   -D mapreduce.job.name=${USER}_task${TASK}_${DATASET} \
+  -D stream.num.map.output.key.fields=2 \
   -input /data/${DATASET}/imdb/name.basics.tsv \
   -input /data/${DATASET}/imdb/title.basics.tsv \
   -output $OUTPUT_DIR \
   -mapper mapper.py \
   -reducer reducer.py \
   -file mapper.py \
-  -file reducer.py) 2>&1 | tee ./outputs/task${TASK}.${DATASET}.${DATE}.log
+  -file reducer.py \
+  -partitioner org.apache.hadoop.mapred.lib.KeyFieldBasedPartitioner) 2>&1 | tee ./outputs/task${TASK}.${DATASET}.${DATE}.log
 
 # Copy output to the folder designated by the assignment document
 hdfs dfs -cp ${OUTPUT_DIR} /user/${USER}/assignment/task${TASK}
