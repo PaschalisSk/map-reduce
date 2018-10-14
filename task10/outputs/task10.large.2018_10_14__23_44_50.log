@@ -1,0 +1,14 @@
+2018-10-14 23:44:54,960 WARN  [main] streaming.StreamJob (StreamJob.java:parseArgv(291)) - -file option is deprecated, please use generic option -files instead.
+packageJobJar: [mapper.py, reducer.py, /tmp/hadoop-unjar2421864570055659498/] [] /tmp/streamjob4110649519532499398.jar tmpDir=null
+2018-10-14 23:44:55,998 INFO  [main] client.RMProxy (RMProxy.java:newProxyInstance(133)) - Connecting to ResourceManager at scutter02.inf.ed.ac.uk/192.168.16.102:8032
+2018-10-14 23:44:56,226 INFO  [main] client.RMProxy (RMProxy.java:newProxyInstance(133)) - Connecting to ResourceManager at scutter02.inf.ed.ac.uk/192.168.16.102:8032
+2018-10-14 23:44:56,488 INFO  [main] hdfs.DFSClient (DFSClient.java:getDelegationToken(689)) - Created HDFS_DELEGATION_TOKEN token 7580 for s1837504 on 192.168.16.101:8020
+2018-10-14 23:44:56,528 INFO  [main] security.TokenCache (TokenCache.java:obtainTokensForNamenodesInternal(143)) - Got dt for hdfs://scutter01.inf.ed.ac.uk:8020; Kind: HDFS_DELEGATION_TOKEN, Service: 192.168.16.101:8020, Ident: (HDFS_DELEGATION_TOKEN token 7580 for s1837504)
+2018-10-14 23:44:56,903 INFO  [main] mapred.FileInputFormat (FileInputFormat.java:listStatus(256)) - Total input files to process : 2
+2018-10-14 23:44:57,183 INFO  [main] mapreduce.JobSubmitter (JobSubmitter.java:submitJobInternal(204)) - number of splits:8
+2018-10-14 23:44:57,311 INFO  [main] Configuration.deprecation (Configuration.java:logDeprecation(1297)) - yarn.resourcemanager.system-metrics-publisher.enabled is deprecated. Instead, use yarn.system-metrics-publisher.enabled
+2018-10-14 23:44:57,397 INFO  [main] mapreduce.JobSubmitter (JobSubmitter.java:printTokens(300)) - Submitting tokens for job: job_1537968858837_7076
+2018-10-14 23:44:57,397 INFO  [main] mapreduce.JobSubmitter (JobSubmitter.java:printTokens(302)) - Kind: HDFS_DELEGATION_TOKEN, Service: 192.168.16.101:8020, Ident: (HDFS_DELEGATION_TOKEN token 7580 for s1837504)
+2018-10-14 23:44:57,835 INFO  [main] impl.YarnClientImpl (YarnClientImpl.java:submitApplication(290)) - Submitted application application_1537968858837_7076
+2018-10-14 23:44:57,893 INFO  [main] mapreduce.Job (Job.java:submit(1574)) - The url to track the job: http://scutter02.inf.ed.ac.uk:8088/proxy/application_1537968858837_7076/
+2018-10-14 23:44:57,895 INFO  [main] mapreduce.Job (Job.java:monitorAndPrintJob(1619)) - Running job: job_1537968858837_7076
