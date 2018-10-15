@@ -14,7 +14,7 @@ hdfs dfs -rm -r $OUTPUT_DIR
   -D mapreduce.job.output.key.comparator.class=org.apache.hadoop.mapreduce.lib.partition.KeyFieldBasedComparator \
   -D mapreduce.job.name=${USER}_task${TASK}_${DATASET} \
   -D stream.num.map.output.key.fields=2 \
-  -D num.key.fields.for.partition=2 \
+  -D num.key.fields.for.partition=1 \
   -input /data/${DATASET}/imdb/name.basics.tsv \
   -input /data/${DATASET}/imdb/title.basics.tsv \
   -output $OUTPUT_DIR \
