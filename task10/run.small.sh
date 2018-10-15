@@ -11,15 +11,18 @@ OUTPUT_FILE=./outputs/task${TASK}.${DATASET}.${DATE}.out
 hdfs dfs -rm -r $OUTPUT_DIR
 
 (time hadoop jar /opt/hadoop/hadoop-2.9.1/share/hadoop/tools/lib/hadoop-streaming-2.9.1.jar \
+  -D mapreduce.job.output.key.comparator.class=org.apache.hadoop.mapreduce.lib.partition.KeyFieldBasedComparator \
   -D mapreduce.job.name=${USER}_task${TASK}_${DATASET} \
   -D stream.num.map.output.key.fields=2 \
+  -D num.key.fields.for.partition=2 \
   -input /data/${DATASET}/imdb/name.basics.tsv \
   -input /data/${DATASET}/imdb/title.basics.tsv \
   -output $OUTPUT_DIR \
   -mapper mapper.py \
   -reducer reducer.py \
   -file mapper.py \
-  -file reducer.py) 2>&1 | tee ./outputs/task${TASK}.${DATASET}.${DATE}.log
+  -file reducer.py \
+  -partitioner org.apache.hadoop.mapred.lib.KeyFieldBasedPartitioner) 2>&1 | tee ./outputs/task${TASK}.${DATASET}.${DATE}.log
 
 # Copy first 20 lines from the output as designated by the assignment document
 hdfs dfs -cat ${OUTPUT_DIR}/part-* | head -n 20 > $OUTPUT_FILE
