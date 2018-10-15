@@ -12,7 +12,7 @@ for line in sys.stdin:  # For every line in the input from stdin
 
     # We are reading lines ordered by title_id
     if prev_title_id == title_id:
-        # If we found two equal titles then we have both the year and the
+        # If we found two equal title_id then we have both the year and the
         # rating of the title so we are printing. If we read the the rating
         # in the previous line we are now reading the year and vice versa.
         if value.split('\t')[0] != 'y':

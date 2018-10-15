@@ -5,7 +5,7 @@ from collections import defaultdict
 
 # Dict to store releases for each genre
 # Practically, for our case, we don't have many genres
-# so no need to flush
+# so no need to flush. In task 4 we found that we have 28 genres.
 mapper_dict = defaultdict(int)
 
 for line in sys.stdin:  # For every line in the input from stdin

@@ -21,6 +21,8 @@ for line in sys.stdin:
 # Thankfully we are handling movie genres and not music so we are
 # avoiding stuff like every possible combination of post, nu, alternative,
 # experimental, progressive, experimental metal :)
+# One key, so everything will go to 1 reducer.
+# I left  the "-D mapred.reduce.tasks=1" in the .sh for no reason.
 print('genres' + '\t' + ','.join(genres))
 
 # As was the case in task3, there is no significant gain of adding

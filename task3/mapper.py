@@ -10,6 +10,8 @@ for line in sys.stdin:
     if 'actor' in profession or 'actress' in profession:
         actors += 1
 
+# One key, so everything will go to 1 reducer.
+# I left  the "-D mapred.reduce.tasks=1" in the .sh for no reason.
 print('actors' + "\t" + str(actors))
 
 # The gains of a normal combiner in this task would be minimal
