@@ -4,9 +4,11 @@ import sys
 from collections import defaultdict
 
 # Dict to store releases for each genre
-# Practically, for our case, we don't have many genres
-# so no need to flush. In task 4 we found that we have 28 genres.
+# Practically, for our case, we don't have many genres.
+# In task 4 we found that we have 28 genres.
+# However we will still flush for good practice.
 mapper_dict = defaultdict(int)
+MAX_SIZE = 4
 
 for line in sys.stdin:  # For every line in the input from stdin
     parts = line.strip().split('\t')
@@ -18,12 +20,11 @@ for line in sys.stdin:  # For every line in the input from stdin
             genres = parts[8].split(',')
             for genre in genres:
                 mapper_dict[genre] += 1
+                if len(mapper_dict) > MAX_SIZE:
+                    for key, value in mapper_dict.items():
+                        print(key + "\t" + str(value))
+                    mapper_dict.clear()
 
-# Emit key-value pairs and use '\t' as the delimiter
+# Emit remaining key-value pairs and use '\t' as the delimiter
 for key, value in mapper_dict.items():
     print(key + "\t" + str(value))
-
-# Again, a normal combiner in this task would only combine outputs
-# from different mappers in one machine and since each mapper
-# produces a small amount ( <=28 as we saw in task4) of key-value pairs
-# it wouldn't add much.
