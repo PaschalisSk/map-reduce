@@ -8,7 +8,7 @@ from collections import defaultdict
 # In task 4 we found that we have 28 genres.
 # However we will still flush for good practice.
 mapper_dict = defaultdict(int)
-MAX_SIZE = 4
+MAX_SIZE = 100
 
 for line in sys.stdin:  # For every line in the input from stdin
     parts = line.strip().split('\t')
