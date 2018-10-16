@@ -5,7 +5,7 @@ import sys
 # Empty set to hold all the genres
 genres = set()
 # Cap the size in case our input grows an more genres are added
-MAX_SIZE = 4
+MAX_SIZE = 100
 
 for line in sys.stdin:
     # Extract all genres in a string
@@ -23,6 +23,8 @@ for line in sys.stdin:
 
 # Print remaining genres
 # One key, so everything will go to 1 reducer.
+# I left  the "-D mapred.reduce.tasks=1" in the .sh in order to avoid an empty
+# part-00000.
 for genre in genres:
     print('genre' + '\t' + genre)
 

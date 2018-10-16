@@ -11,8 +11,8 @@ for line in sys.stdin:
         actors += 1
 
 # One key, so everything will go to 1 reducer.
-# I left  the "-D mapred.reduce.tasks=1" in the .sh for no reason(copy-pasted
-# from previous task).
+# I left  the "-D mapred.reduce.tasks=1" in the .sh in order to avoid an empty
+# part-00000.
 print('actors' + "\t" + str(actors))
 
 # The gains of a normal combiner in this task would be minimal
