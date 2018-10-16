@@ -1,0 +1,84 @@
+2018-10-16 18:30:52,921 WARN  [main] streaming.StreamJob (StreamJob.java:parseArgv(291)) - -file option is deprecated, please use generic option -files instead.
+packageJobJar: [mapper.py, reducer.py, /tmp/hadoop-unjar8785029481693393930/] [] /tmp/streamjob3530016000646190830.jar tmpDir=null
+2018-10-16 18:30:53,789 INFO  [main] client.RMProxy (RMProxy.java:newProxyInstance(133)) - Connecting to ResourceManager at scutter02.inf.ed.ac.uk/192.168.16.102:8032
+2018-10-16 18:30:54,002 INFO  [main] client.RMProxy (RMProxy.java:newProxyInstance(133)) - Connecting to ResourceManager at scutter02.inf.ed.ac.uk/192.168.16.102:8032
+2018-10-16 18:30:54,241 INFO  [main] hdfs.DFSClient (DFSClient.java:getDelegationToken(689)) - Created HDFS_DELEGATION_TOKEN token 9410 for s1837504 on 192.168.16.101:8020
+2018-10-16 18:30:54,278 INFO  [main] security.TokenCache (TokenCache.java:obtainTokensForNamenodesInternal(143)) - Got dt for hdfs://scutter01.inf.ed.ac.uk:8020; Kind: HDFS_DELEGATION_TOKEN, Service: 192.168.16.101:8020, Ident: (HDFS_DELEGATION_TOKEN token 9410 for s1837504)
+2018-10-16 18:30:54,663 INFO  [main] mapred.FileInputFormat (FileInputFormat.java:listStatus(256)) - Total input files to process : 1
+2018-10-16 18:30:54,948 INFO  [main] mapreduce.JobSubmitter (JobSubmitter.java:submitJobInternal(204)) - number of splits:4
+2018-10-16 18:30:55,074 INFO  [main] Configuration.deprecation (Configuration.java:logDeprecation(1297)) - yarn.resourcemanager.system-metrics-publisher.enabled is deprecated. Instead, use yarn.system-metrics-publisher.enabled
+2018-10-16 18:30:55,155 INFO  [main] mapreduce.JobSubmitter (JobSubmitter.java:printTokens(300)) - Submitting tokens for job: job_1537968858837_8848
+2018-10-16 18:30:55,155 INFO  [main] mapreduce.JobSubmitter (JobSubmitter.java:printTokens(302)) - Kind: HDFS_DELEGATION_TOKEN, Service: 192.168.16.101:8020, Ident: (HDFS_DELEGATION_TOKEN token 9410 for s1837504)
+2018-10-16 18:30:55,530 INFO  [main] impl.YarnClientImpl (YarnClientImpl.java:submitApplication(290)) - Submitted application application_1537968858837_8848
+2018-10-16 18:30:55,580 INFO  [main] mapreduce.Job (Job.java:submit(1574)) - The url to track the job: http://scutter02.inf.ed.ac.uk:8088/proxy/application_1537968858837_8848/
+2018-10-16 18:30:55,582 INFO  [main] mapreduce.Job (Job.java:monitorAndPrintJob(1619)) - Running job: job_1537968858837_8848
+2018-10-16 18:31:02,704 INFO  [main] mapreduce.Job (Job.java:monitorAndPrintJob(1640)) - Job job_1537968858837_8848 running in uber mode : false
+2018-10-16 18:31:02,706 INFO  [main] mapreduce.Job (Job.java:monitorAndPrintJob(1647)) -  map 0% reduce 0%
+2018-10-16 18:31:10,797 INFO  [main] mapreduce.Job (Job.java:monitorAndPrintJob(1647)) -  map 25% reduce 0%
+2018-10-16 18:31:12,811 INFO  [main] mapreduce.Job (Job.java:monitorAndPrintJob(1647)) -  map 50% reduce 0%
+2018-10-16 18:31:13,817 INFO  [main] mapreduce.Job (Job.java:monitorAndPrintJob(1647)) -  map 100% reduce 0%
+2018-10-16 18:31:15,828 INFO  [main] mapreduce.Job (Job.java:monitorAndPrintJob(1647)) -  map 100% reduce 50%
+2018-10-16 18:31:17,839 INFO  [main] mapreduce.Job (Job.java:monitorAndPrintJob(1647)) -  map 100% reduce 100%
+2018-10-16 18:31:17,850 INFO  [main] mapreduce.Job (Job.java:monitorAndPrintJob(1658)) - Job job_1537968858837_8848 completed successfully
+2018-10-16 18:31:17,982 INFO  [main] mapreduce.Job (Job.java:monitorAndPrintJob(1665)) - Counters: 50
+	File System Counters
+		FILE: Number of bytes read=1674
+		FILE: Number of bytes written=1225030
+		FILE: Number of read operations=0
+		FILE: Number of large read operations=0
+		FILE: Number of write operations=0
+		HDFS: Number of bytes read=448293420
+		HDFS: Number of bytes written=382
+		HDFS: Number of read operations=18
+		HDFS: Number of large read operations=0
+		HDFS: Number of write operations=4
+	Job Counters 
+		Launched map tasks=4
+		Launched reduce tasks=2
+		Data-local map tasks=3
+		Rack-local map tasks=1
+		Total time spent by all maps in occupied slots (ms)=59400
+		Total time spent by all reduces in occupied slots (ms)=29984
+		Total time spent by all map tasks (ms)=29700
+		Total time spent by all reduce tasks (ms)=7496
+		Total vcore-milliseconds taken by all map tasks=29700
+		Total vcore-milliseconds taken by all reduce tasks=7496
+		Total megabyte-milliseconds taken by all map tasks=121651200
+		Total megabyte-milliseconds taken by all reduce tasks=61407232
+	Map-Reduce Framework
+		Map input records=5285868
+		Map output records=108
+		Map output bytes=1446
+		Map output materialized bytes=1710
+		Input split bytes=476
+		Combine input records=0
+		Combine output records=0
+		Reduce input groups=27
+		Reduce shuffle bytes=1710
+		Reduce input records=108
+		Reduce output records=27
+		Spilled Records=216
+		Shuffled Maps =8
+		Failed Shuffles=0
+		Merged Map outputs=8
+		GC time elapsed (ms)=797
+		CPU time spent (ms)=28050
+		Physical memory (bytes) snapshot=3431591936
+		Virtual memory (bytes) snapshot=38950203392
+		Total committed heap usage (bytes)=7384072192
+	Shuffle Errors
+		BAD_ID=0
+		CONNECTION=0
+		IO_ERROR=0
+		WRONG_LENGTH=0
+		WRONG_MAP=0
+		WRONG_REDUCE=0
+	File Input Format Counters 
+		Bytes Read=448292944
+	File Output Format Counters 
+		Bytes Written=382
+2018-10-16 18:31:17,982 INFO  [main] streaming.StreamJob (StreamJob.java:submitAndMonitorJob(1025)) - Output directory: /user/s1837504/output/task9/large
+
+real	0m25.958s
+user	0m8.803s
+sys	0m0.617s
