@@ -8,7 +8,6 @@ import sys
 # Can't initialize to 0 because it is a valid rating
 scores_sum = [None] * 10
 # Array to hold count of titles for each decade
-# Array has practically constant size
 titles_count = [None] * 10
 
 for line in sys.stdin:

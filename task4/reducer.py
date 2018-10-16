@@ -2,18 +2,15 @@
 # reducer.py
 import sys
 
-# Set which holds all the genres
-# Again, given our problem, we won't have memory problems, so we are not
-# flushing.
-genres = set()
+prev_genre = None
 
 for line in sys.stdin:  # For every line in the input from stdin
     line = line.strip()  # Remove trailing characters
-    key, value = line.split('\t', 1)
-    value = set(value.split(','))
-    genres = genres.union(value)
+    key, genre = line.split('\t', 1)
 
-for genre in sorted(genres):
-    # Here, and in some previous examples, I am adding the \t just to match the
-    # sample output.
-    print(genre + '\t')
+    # We have one key ('genre') and the inputs are listed based on the
+    # values so we already have the required alphabetical order.
+    if genre != prev_genre:
+        # Print every new genre we read
+        print(genre + '\t')
+        prev_genre = genre

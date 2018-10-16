@@ -2,6 +2,10 @@
 # reducer.py
 import sys
 
+# We could have secondary ordering and the code here would be simpler.
+# However, I didn't think about it and completed the task this way.
+# The concept is that if we read two lines with the same title_id
+# then we have both a valid decade and a rating for that title.
 prev_title_id = None
 year = None
 rating = None
@@ -13,7 +17,7 @@ for line in sys.stdin:  # For every line in the input from stdin
     # We are reading lines ordered by title_id
     if prev_title_id == title_id:
         # If we found two equal title_id then we have both the year and the
-        # rating of the title so we are printing. If we read the the rating
+        # rating of the title so we are printing. If we read the rating
         # in the previous line we are now reading the year and vice versa.
         if value.split('\t')[0] != 'y':
             year = value.split('\t')[0]

@@ -4,6 +4,8 @@ import sys
 
 # Empty set to hold all the genres
 genres = set()
+# Cap the size in case our input grows an more genres are added
+MAX_SIZE = 4
 
 for line in sys.stdin:
     # Extract all genres in a string
@@ -14,16 +16,15 @@ for line in sys.stdin:
     if '\N' not in title_genres:
         # Create the union of the old and new sets
         genres = genres.union(title_genres)
+        if len(genres) > MAX_SIZE:
+            for genre in genres:
+                print('genre' + '\t' + genre)
+            genres.clear()
 
-# It's going to be a long string with all the genres but
-# for our problem an upper bound of 100 genres, each 10 characters long,
-# is logical. Hence, we don't have to flush incomplete results.
-# Thankfully we are handling movie genres and not music so we are
-# avoiding stuff like every possible combination of post, nu, alternative,
-# experimental, progressive, experimental metal :)
+# Print remaining genres
 # One key, so everything will go to 1 reducer.
-# I left  the "-D mapred.reduce.tasks=1" in the .sh for no reason.
-print('genres' + '\t' + ','.join(genres))
+for genre in genres:
+    print('genre' + '\t' + genre)
 
 # As was the case in task3, there is no significant gain of adding
 # a normal combiner in this task.
