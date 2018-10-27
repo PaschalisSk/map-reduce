@@ -16,8 +16,10 @@ hdfs dfs -rm -r $OUTPUT_DIR
   -input /data/${DATASET}/gutenberg \
   -output $OUTPUT_DIR \
   -mapper mapper.py \
+  -combiner combiner.py \
   -reducer reducer.py \
   -file mapper.py \
+  -file combiner.py \
   -file reducer.py) 2>&1 | tee ./outputs/task${TASK}.${DATASET}.${DATE}.log
 
 # Copy first 20 lines from the output as designated by the assignment document

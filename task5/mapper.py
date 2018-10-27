@@ -23,4 +23,4 @@ for line in sys.stdin:
 
 print('min\t' + str(min_year))
 print('max\t' + str(max_year))
-# Again, each mapper outputs 2 key-value pairs. A reducer wouldn't do much.
+# Again, each mapper outputs 2 key-value pairs. A combiner wouldn't do much.

@@ -21,4 +21,4 @@ for line in sys.stdin:
 
 print('titles\t' + str(total_titles))
 print('writers\t' + str(total_writers))
-# Again, each mapper outputs 2 key-value pairs. A reducer wouldn't do much.
+# Again, each mapper outputs 2 key-value pairs. A combiner wouldn't do much.
