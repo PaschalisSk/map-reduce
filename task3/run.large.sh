@@ -17,10 +17,8 @@ hdfs dfs -rm -r /user/${USER}/assignment/task${TASK}
   -input /data/${DATASET}/imdb/name.basics.tsv \
   -output $OUTPUT_DIR \
   -mapper mapper.py \
-  -combiner combiner.py \
   -reducer reducer.py \
   -file mapper.py \
-  -file combiner.py \
   -file reducer.py) 2>&1 | tee ./outputs/task${TASK}.${DATASET}.${DATE}.log
 
 # Copy output to the folder designated by the assignment document
