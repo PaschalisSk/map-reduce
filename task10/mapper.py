@@ -19,8 +19,3 @@ for line in sys.stdin:
             titles = parts[5].split(',')
             for title_id in titles:
                 print(title_id + '\t' + crew_id)
-
-# I wrote a combiner for this task but it messed up the ordering in the
-# reducer. However, I left the code in combiner.py in case it is a bug of
-# hadoop and it is fixed in a future release. In case we want to use
-# the combiner we would also have to add some logic to the reducer.
