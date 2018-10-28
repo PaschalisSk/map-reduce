@@ -4,7 +4,7 @@ import sys
 
 # Empty set to hold all the genres
 genres = set()
-# Cap the size in case our input grows an more genres are added
+# Cap the size in case our input grows and more genres are added
 MAX_SIZE = 100
 
 for line in sys.stdin:

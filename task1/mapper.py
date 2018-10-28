@@ -5,6 +5,12 @@ import sys
 # Variables to store line count and word count
 lines = 0
 words = 0
+# I think it's safe to assume that the memory footprint of those two numbers
+# won't surpass the available RAM(practically).
+# Therefore there is no need to flush.
+# In addition, it is stated here
+# https://piazza.com/class/jlhphc1qfrn6z4?cid=115
+# not to account for this.
 
 for line in sys.stdin:
     lines += 1
@@ -14,8 +20,10 @@ for line in sys.stdin:
 print("lines" + "\t" + str(lines))
 print("words" + "\t" + str(words))
 
-# We could add a combiner in order to combine outputs from different
-# mappers which run in the same machine. However, the large Gutenberg dataset
+# In most tasks we implement an in-map combiner and the only improvement from
+# a normal combiner would be to combine outputs from the same node.
+
+# For this case however, the large Gutenberg dataset
 # has only 17 files which means the best increase we could get from a
 # reducer is if those 17 mappers(1 for each file) run on the same machine.
 # i.e. In the best case, a machine would shuffle & short 2 key-pair values

@@ -5,9 +5,6 @@ import sys
 # Variables to hold totals
 total_titles = 0
 total_writers = 0
-# I think it's safe to assume that the memory footprint of those two numbers
-# won't surpass the available RAM(practically).
-# Therefore there is no need to flush.
 
 for line in sys.stdin:
     # Extract the writers

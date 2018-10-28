@@ -5,7 +5,8 @@ import sys
 prev_title_id = None
 # The lines with titles within our year range (2010-2018)
 # are sorted before the ones with crew id because they have 'c' in the second
-# column. We can therefore check the year column for a new title_id and if
+# column(while lines with crew id have nmXXX).
+# We can therefore check the year column for a new title_id and if
 # the column has value='c' then this movie was released 2010-2018.
 valid_year = False
 

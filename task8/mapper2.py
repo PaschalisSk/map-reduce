@@ -3,7 +3,7 @@
 import sys
 
 # Array to hold sum of scores for each decade
-# Array has practically constant size
+# Array has constant size
 # Index 0 for 1900, 1 for 1910 etc.
 # Can't initialize to 0 because it is a valid rating
 scores_sum = [None] * 10
