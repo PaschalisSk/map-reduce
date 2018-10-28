@@ -25,6 +25,6 @@ for line in sys.stdin:  # For every line in the input from stdin
 
 # Print the results
 # if statement is required in case we didn't
-# get any input (i.e. reducer_dict is empty)
+# get any input (i.e. input files were empty)
 if 'words' in reducer_dict and 'lines' in reducer_dict:
     print("{0}\t{1}".format(reducer_dict['words'], reducer_dict['lines']))

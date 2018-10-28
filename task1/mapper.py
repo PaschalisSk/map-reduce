@@ -14,9 +14,6 @@ for line in sys.stdin:
 print("lines" + "\t" + str(lines))
 print("words" + "\t" + str(words))
 
-# Both in this and some of the next tasks we implement a combiner
-# only to combine results from multiple mappers in one machine.
-
 # We could add a combiner in order to combine outputs from different
 # mappers which run in the same machine. However, the large Gutenberg dataset
 # has only 17 files which means the best increase we could get from a
@@ -25,3 +22,9 @@ print("words" + "\t" + str(words))
 # instead of 34(each mapper outputs 2 key-pair values). It is an infinitesimal
 # increase for this dataset so we didn't implement a combiner.
 
+# I later added a combiner, even if it wouldn't change much, and you can find
+# it at combiner.py. However, for some reason, I saw in the log that the
+# combine input was equal to the combine output. So for some reason the
+# combiner didn't do anything and only added overhead. Therefore, I removed it
+# from run.sh. I also tried it in task3 but with the same results. If the
+# combiner had any results it could be added to tasks 1, 3, 4, 6, 7, and 9.

@@ -5,7 +5,7 @@ import sys
 actors = 0
 
 for line in sys.stdin:
-    profession = line.split('\t', 5)[4]
+    profession = line.strip().split('\t', 5)[4]
     # No need to check for \N, the condition below accounts for it
     if 'actor' in profession or 'actress' in profession:
         actors += 1
