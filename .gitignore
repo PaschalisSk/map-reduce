@@ -1,9 +1,11 @@
-/.idea/*
-/exc_data/*
-/data/*
+.idea/
+exc_data/*
+!exc_data/small/
+**/outputs/
+**/run.large.sh
 *.pyc
-main*.py
 pipe.txt
 Qs.txt
 sorted_pipe.txt
 comb_pipe.txt
+assignment.pdf
